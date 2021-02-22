@@ -17,14 +17,14 @@ router.post("/api/insert", (req, res) => {
     console.log(err);
   })
   .then(()=>{
-    res.send("data added")
+    res.send("Todo added")
   })
 
 });
 router.delete("/api/delete/:id", (req, res) => {
   let id= req.params.id;
   todo.destroy({where:{id:id}}).then(()=>{
-    res.send("Data deleted")
+    res.send("Todo deleted")
   })
 });
 router.put('/api/delete/:id/:newtodo',(req,res)=>{
@@ -38,7 +38,7 @@ router.put('/api/delete/:id/:newtodo',(req,res)=>{
       id:req.params.id
     }
   }).then(()=>{
-    res.send("Data edited")
+    res.send("Todo edited")
   })
 })
 
